@@ -1,4 +1,4 @@
-pipeline {
+Pipeline {
   agent any
 
   stages {
@@ -10,13 +10,13 @@ pipeline {
 
     stage('Package') {
       steps {
-        sh 'docker build -t hola-java:ci .'
+        sh 'sudo docker build -t hola-java:ci .'
       }
     }
 
     stage('Run') {
       steps {
-        sh 'docker run --rm hola-java:ci'
+        sh 'sudo docker run --rm hola-java:ci'
       }
     }
   }
